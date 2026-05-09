@@ -9,24 +9,24 @@ import { motion } from "framer-motion";
 
 const faqData = [
   {
-    q: "Is Al Noor Home Maid Services Institute registered?",
-    a: "Yes, Al Noor Home Maid Services Institute is registered since 2019.",
+    q: "Is Capital Home Maid Services registered?",
+    a: "Yes, Capital Home Maid Services is a registered and trusted company providing services since 2019.",
   },
   {
-    q: "What is the registration number?",
-    a: 'Registration number is "3730139464981".',
+    q: "What is the registration number of Capital Home Maid Services?",
+    a: "The registration number of Capital Home Maid Services is 3730139464981.",
   },
   {
-    q: "Who is the owner?",
-    a: "CHUDHARY MUHAMMAD SADDAM HUSSAIN is the owner.",
+    q: "Who is the owner of Capital Home Maid Services?",
+    a: "IMRAN HAIDER BHATTI is the owner of Capital Home Maid Services.",
   },
   {
-    q: "What is response time?",
-    a: "Our response time is within 24 hours.",
+    q: "What is the response time of your services?",
+    a: "Our response time is within 24 hours for all service requests and inquiries.",
   },
   {
-    q: "What is the address?",
-    a: "Office No #7 Asim Market First Floor Near Imtiaz Food G112 Service Road Islamabad.",
+    q: "What is the office address of Capital Home Maid Services?",
+    a: "G-11/2 Service Road, Islamabad.",
   },
 ];
 
@@ -39,7 +39,6 @@ const Qa = () => {
 
   return (
     <Wrapper>
-
       {/* Heading */}
       <motion.div
         className="heading"
@@ -48,14 +47,11 @@ const Qa = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <Typography variant="h4">
-          Frequently Asked Questions
-        </Typography>
+        <Typography variant="h4">Frequently Asked Questions</Typography>
       </motion.div>
 
       {/* FAQ */}
       <div className="faqs">
-
         {faqData.map((item, index) => (
           <motion.div
             key={index}
@@ -70,22 +66,16 @@ const Qa = () => {
               className="accordion"
             >
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography className="question">
-                  {item.q}
-                </Typography>
+                <Typography className="question">{item.q}</Typography>
               </AccordionSummary>
 
               <AccordionDetails>
-                <Typography className="answer">
-                  {item.a}
-                </Typography>
+                <Typography className="answer">{item.a}</Typography>
               </AccordionDetails>
             </Accordion>
           </motion.div>
         ))}
-
       </div>
-
     </Wrapper>
   );
 };
@@ -114,7 +104,7 @@ const Wrapper = styled.div`
 
   .accordion {
     border-radius: 12px !important;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     overflow: hidden;
   }
 
