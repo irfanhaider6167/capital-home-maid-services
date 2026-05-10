@@ -188,9 +188,26 @@ const Wrapper = styled.section`
     transition: 0.3s ease;
   }
 
+  /* ✅ IMAGE FIX */
   .serviceImage {
+    width: 100%;
     height: 220px;
     object-fit: cover;
+    object-position: center;
+  }
+
+  /* ✅ MOBILE FIX */
+  @media (max-width: 768px) {
+    padding: 60px 15px;
+
+    .serviceCard {
+      width: 100%;
+    }
+
+    .serviceImage {
+      height: 180px;
+      object-position: center top;
+    }
   }
 
   .cardContent {
@@ -218,13 +235,5 @@ const Wrapper = styled.section`
 
   .whatsappBtn:hover {
     background: #1ebe5d !important;
-  }
-
-  @media (max-width: 768px) {
-    padding: 60px 15px;
-
-    .serviceCard {
-      width: 100%;
-    }
   }
 `;

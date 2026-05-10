@@ -58,7 +58,11 @@ const Footer = () => {
 
             <div className="footerIcons">
               <FacebookIcon />
-              <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.facebook.com/profile.php?id=61555552839581"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Facebook
               </a>
             </div>

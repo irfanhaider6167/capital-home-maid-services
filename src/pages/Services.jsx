@@ -1,33 +1,26 @@
-import React, { memo, Suspense } from "react";
+import React, { memo } from "react";
 import { Typography, Box, CircularProgress } from "@mui/material";
 import styled from "styled-components";
 
-// lazy load (better performance)
-const ActionAreaCard = React.lazy(() => import("../components/Card"));
+// normal import (no lazy loading)
+import ActionAreaCard from "../components/Card";
 
 const Services = () => {
   return (
     <Wrapper>
-
       {/* Heading */}
       <Typography variant="h4" className="title">
         Our Services
       </Typography>
 
-      {/* Lazy Loaded Content */}
-      <Suspense
-        fallback={
-          <Box className="loader">
-            <CircularProgress />
-          </Box>
-        }
-      >
+      {/* Content */}
+      <Box className="content">
         <ActionAreaCard />
-      </Suspense>
-
+      </Box>
     </Wrapper>
   );
 };
+
 const Wrapper = styled.section`
   padding: 60px 20px;
   background: #f9fafb;
@@ -39,10 +32,10 @@ const Wrapper = styled.section`
     color: #111827;
   }
 
-  .loader {
+  .content {
     display: flex;
     justify-content: center;
-    padding: 50px 0;
   }
 `;
+
 export default memo(Services);
