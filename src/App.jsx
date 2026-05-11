@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 
 import Home from "./pages/Home";
@@ -14,27 +14,27 @@ const Loader = () => <div>Loading...</div>;
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/qa" element={<Qa />} />
+    // <BrowserRouter>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/qa" element={<Qa />} />
 
-          <Route
-            path="/services"
-            element={
-              <Suspense fallback={<Loader />}>
-                <Services />
-              </Suspense>
-            }
-          />
-        </Route>
+        <Route
+          path="/services"
+          element={
+            <Suspense fallback={<Loader />}>
+              <Services />
+            </Suspense>
+          }
+        />
+      </Route>
 
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
+    // </BrowserRouter>
   );
 };
 
