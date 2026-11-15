@@ -13,10 +13,10 @@ const Layout = () => {
     <>
       <Header />
 
-      {/* Slider always controlled by route */}
-      {location.pathname !== "/pagenotfound" && <Slider />}
+      {/* Slider hidden on 404 and individual service detail pages */}
+      {location.pathname !== "/pagenotfound" &&
+        !location.pathname.startsWith("/services/") && <Slider />}
 
-      {/* IMPORTANT FIX */}
       <main key={location.pathname}>
         <Outlet />
       </main>

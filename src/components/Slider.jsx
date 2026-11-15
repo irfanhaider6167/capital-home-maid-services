@@ -1,144 +1,177 @@
 import React, { memo } from "react";
-import { Box, IconButton, Typography } from "@mui/material";
-
-import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import { Box, IconButton, Typography, Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import {
+  ArrowBackIosNew,
+  ArrowForwardIos,
+  WhatsApp,
+} from "@mui/icons-material";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, EffectFade } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
-const images = [
+const WHATSAPP_NUMBER = "923477054656";
+
+const slidesData = [
   {
-    url: "/images/finalimg/Maid.jpg",
-    text: "WELCOME TO CAPITAL HOME MAID SERVICES",
-    category: "MAID",
+    url: "/images/service/house-maid.webp",
+    badge: "CLEAN • RELIABLE • TRUSTED",
+    text: "WELCOME TO SANIA HOME MAID SERVICES",
+    subtext:
+      "CNIC-verified house maids, house keepers & domestic staff in Islamabad & Rawalpindi.",
+    slug: "/services/house-maid",
   },
   {
-    url: "/images/finalimg/Couple Maid (2).jpg",
-    text: "PROFESSIONAL & TRUSTED HOME STAFF",
-    category: "COUPLE MAID",
+    url: "/images/service/couple.webp",
+    badge: "VERIFIED DOMESTIC COUPLES",
+    text: "COMPLETE HOUSEHOLD MANAGEMENT",
+    subtext:
+      "Experienced husband-and-wife domestic couples for homes, villas & farmhouses.",
+    slug: "/services/couple",
   },
   {
-    url: "/images/finalimg/Cook.jpg",
+    url: "/images/service/cook.webp",
+    badge: "HYGIENIC HOME COOKING",
     text: "EXPERIENCED HOME & OFFICE COOKS",
-    category: "COOK",
+    subtext:
+      "Skilled cooks & kitchen helpers for fresh, healthy daily family meals.",
+    slug: "/services/cook",
   },
   {
-    url: "/images/finalimg/Female Chef.jpg",
-    text: "QUALITY DOMESTIC SERVICES",
-    category: "FEMALE CHEF",
+    url: "/images/service/chef.webp",
+    badge: "MULTI-CUISINE CULINARY EXPERTS",
+    text: "PROFESSIONAL CHEF SERVICES",
+    subtext:
+      "Pakistani, Continental & Chinese cuisine specialists for home & private events.",
+    slug: "/services/chef",
   },
   {
-    url: "/images/finalimg/Driver (2).jpg",
-    text: "RELIABLE DRIVER SERVICES",
-    category: "DRIVER",
+    url: "/images/service/driver.webp",
+    badge: "SAFE & PUNCTUAL STAFF",
+    text: "LICENSED DRIVERS & SECURITY GUARDS",
+    subtext:
+      "Background-verified family drivers and trained residential security guards.",
+    slug: "/services/driver",
   },
   {
-    url: "/images/finalimg/Baby Sitter.jpg",
-    text: "SAFE & PROFESSIONAL BABY CARE",
-    category: "BABY CARE",
+    url: "/images/service/babysitter.webp",
+    badge: "LOVING & ATTENTIVE CHILD CARE",
+    text: "TRUSTED BABYSITTER & NANNY SERVICES",
+    subtext:
+      "Caring, experienced female nannies for newborns, infants & school-going kids.",
+    slug: "/services/babysitter-nanny",
   },
   {
-    url: "/images/finalimg/Nurse.jpg",
-    text: "PROFESSIONAL NURSING SERVICES",
-    category: "NURSE",
+    url: "/images/service/nurse.webp",
+    badge: "24/7 MEDICAL & ELDERLY CARE",
+    text: "PROFESSIONAL HOME NURSING & PATIENT CARE",
+    subtext:
+      "Qualified male & female nurses and patient care attendants at your doorstep.",
+    slug: "/services/nurse",
   },
 ];
 
 const Slider = () => {
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    "Hello Sania Home Maid Services, I would like to hire verified domestic staff in Islamabad/Rawalpindi.",
+  )}`;
+
   return (
     <Wrapper>
       <Box className="sliderContainer">
         <Swiper
-          modules={[Navigation, Autoplay, EffectFade]}
+          modules={[Navigation, Pagination, Autoplay, EffectFade]}
           slidesPerView={1}
           spaceBetween={0}
           effect="fade"
+          fadeEffect={{ crossFade: true }}
           loop={true}
           speed={1200}
           autoplay={{
-            delay: 4500,
+            delay: 5000,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          pagination={{
+            clickable: true,
           }}
           navigation={{
             nextEl: ".next-btn",
             prevEl: ".prev-btn",
           }}
         >
-          {images.map((item, index) => (
+          {slidesData.map((item, index) => (
             <SwiperSlide key={index}>
-              {/* Image */}
-              <motion.img
-                src={item.url}
-                alt={item.category}
-                className="sliderImage"
-                loading={index === 0 ? "eager" : "lazy"}
-                initial={{ scale: 1.15 }}
-                animate={{ scale: 1 }}
-                transition={{
-                  duration: 6,
-                  ease: "easeOut",
-                }}
-              />
+              <div className="slideInner">
+                {/* Continuous Zoom-In Image */}
+                <img
+                  src={item.url}
+                  alt={`${item.badge} - Sania Home Maid Services`}
+                  className="sliderImage"
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
 
-              {/* Overlay */}
-              <div className="overlay"></div>
+                {/* Cinematic Gradient Overlay */}
+                <div className="overlay"></div>
 
-              {/* Content */}
-              <motion.div
-                className="content"
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 1.2,
-                  ease: "easeOut",
-                }}
-              >
-                <Typography variant="h2" className="sliderText">
-                  {item.text}
-                </Typography>
+                {/* Animated Slide Content */}
+                <div className="content">
+                  <span className="badgePill">{item.badge}</span>
 
-                {/* Category */}
-                <motion.div
-                  className="category"
-                  initial={{
-                    opacity: 0,
-                    scale: 0.5,
-                    y: 30,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    delay: 0.5,
-                    duration: 0.7,
-                    type: "spring",
-                    stiffness: 120,
-                  }}
-                >
-                  <Typography variant="h5">{item.category}</Typography>
-                </motion.div>
-              </motion.div>
+                  <Typography
+                    variant="h2"
+                    component={index === 0 ? "h1" : "h2"}
+                    className="sliderText"
+                  >
+                    {item.text}
+                  </Typography>
+
+                  <Typography className="sliderSubtext">
+                    {item.subtext}
+                  </Typography>
+
+                  <Box className="ctaGroup">
+                    <Button
+                      component={Link}
+                      to={item.slug}
+                      variant="contained"
+                      className="primaryBtn"
+                    >
+                      Explore Service
+                    </Button>
+
+                    <Button
+                      component="a"
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="contained"
+                      startIcon={<WhatsApp />}
+                      className="waBtn"
+                    >
+                      Book on WhatsApp
+                    </Button>
+                  </Box>
+                </div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* Previous Button */}
-        <IconButton className="prev-btn navBtn">
-          <ArrowBackIos />
+        {/* Navigation Arrows */}
+        <IconButton className="prev-btn navBtn" aria-label="Previous slide">
+          <ArrowBackIosNew fontSize="small" />
         </IconButton>
 
-        {/* Next Button */}
-        <IconButton className="next-btn navBtn">
-          <ArrowForwardIos />
+        <IconButton className="next-btn navBtn" aria-label="Next slide">
+          <ArrowForwardIos fontSize="small" />
         </IconButton>
       </Box>
     </Wrapper>
@@ -150,19 +183,48 @@ const Wrapper = styled.section`
     position: relative;
     width: 100%;
     overflow: hidden;
+    background: #071426;
+  }
+
+  .slideInner {
+    position: relative;
+    width: 100%;
+    height: 88vh;
+    overflow: hidden;
   }
 
   .sliderImage {
     width: 100%;
-    height: 88vh;
+    height: 100%;
     object-fit: cover;
     display: block;
+    transform: scale(1);
+    will-change: transform;
+  }
+
+  /* Smooth Ken Burns Zoom-In on Active Slide */
+  .swiper-slide-active .sliderImage {
+    animation: kenBurnsZoom 7s ease-out forwards;
+  }
+
+  @keyframes kenBurnsZoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.14);
+    }
   }
 
   .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: linear-gradient(
+      180deg,
+      rgba(7, 20, 38, 0.55) 0%,
+      rgba(7, 20, 38, 0.45) 50%,
+      rgba(7, 20, 38, 0.8) 100%
+    );
     z-index: 1;
   }
 
@@ -170,33 +232,116 @@ const Wrapper = styled.section`
     position: absolute;
     inset: 0;
     z-index: 2;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-    padding: 20px;
+    padding: 20px 60px;
+  }
+
+  .badgePill {
+    background: rgba(11, 42, 91, 0.85);
+    color: #f7d774;
+    border: 1px solid rgba(197, 155, 67, 0.75);
+    padding: 8px 22px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transform: translateY(25px);
   }
 
   .sliderText {
-    color: white;
-    font-weight: 700;
-    max-width: 950px;
-    line-height: 1.3;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    margin-bottom: 25px;
+    color: #ffffff;
+    font-weight: 800;
+    max-width: 920px;
+    line-height: 1.25;
+    text-shadow: 0 6px 25px rgba(0, 0, 0, 0.65);
+    margin-bottom: 16px;
+    opacity: 0;
+    transform: translateY(30px);
   }
 
-  .category {
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 12px 28px;
-    border-radius: 50px;
-    backdrop-filter: blur(8px);
+  .sliderSubtext {
+    color: #e5e7eb;
+    max-width: 680px;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
-    animation: float 3s ease-in-out infinite;
+  .ctaGroup {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  /* Staggered Entrance Animations when Slide Becomes Active */
+  .swiper-slide-active .badgePill {
+    animation: slideFadeUp 0.7s ease-out 0.15s forwards;
+  }
+
+  .swiper-slide-active .sliderText {
+    animation: slideFadeUp 0.75s ease-out 0.3s forwards;
+  }
+
+  .swiper-slide-active .sliderSubtext {
+    animation: slideFadeUp 0.75s ease-out 0.45s forwards;
+  }
+
+  .swiper-slide-active .ctaGroup {
+    animation: slideFadeUp 0.75s ease-out 0.6s forwards;
+  }
+
+  @keyframes slideFadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .primaryBtn {
+    background: #c59b43 !important;
+    color: #071426 !important;
+    font-weight: 700 !important;
+    padding: 12px 28px !important;
+    border-radius: 50px !important;
+    text-transform: none !important;
+    font-size: 15px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+    transition: 0.3s ease !important;
+  }
+
+  .primaryBtn:hover {
+    background: #f7d774 !important;
+    transform: translateY(-2px);
+  }
+
+  .waBtn {
+    background: #25d366 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    padding: 12px 28px !important;
+    border-radius: 50px !important;
+    text-transform: none !important;
+    font-size: 15px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+    transition: 0.3s ease !important;
+  }
+
+  .waBtn:hover {
+    background: #1ebe5d !important;
+    transform: translateY(-2px);
   }
 
   .navBtn {
@@ -204,62 +349,93 @@ const Wrapper = styled.section`
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-
-    background: rgba(255, 255, 255, 0.9) !important;
-
+    width: 48px;
+    height: 48px;
+    background: rgba(7, 20, 38, 0.65) !important;
+    color: #f7d774 !important;
+    border: 1px solid rgba(247, 215, 116, 0.4) !important;
+    backdrop-filter: blur(6px);
     transition: 0.3s ease !important;
   }
 
   .navBtn:hover {
-    transform: translateY(-50%) scale(1.15);
-    background: #25d366 !important;
-    color: white;
+    transform: translateY(-50%) scale(1.1);
+    background: #c59b43 !important;
+    color: #071426 !important;
   }
 
   .prev-btn {
-    left: 15px;
+    left: 20px;
   }
 
   .next-btn {
-    right: 15px;
+    right: 20px;
   }
 
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
+  /* Pagination Bullets */
+  .swiper-pagination {
+    bottom: 24px !important;
+    z-index: 10;
+  }
 
-    50% {
-      transform: translateY(-8px);
-    }
+  .swiper-pagination-bullet {
+    width: 11px;
+    height: 11px;
+    background: rgba(255, 255, 255, 0.65);
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
 
-    100% {
-      transform: translateY(0px);
-    }
+  .swiper-pagination-bullet-active {
+    width: 30px;
+    border-radius: 8px;
+    background: #f7d774;
   }
 
   @media (max-width: 768px) {
-    .sliderImage {
-      height: 55vh;
-      object-position: center;
+    .slideInner {
+      height: 64vh;
+    }
+
+    .content {
+      padding: 20px 24px;
+    }
+
+    .badgePill {
+      font-size: 11px;
+      padding: 6px 14px;
+      letter-spacing: 1.2px;
+      margin-bottom: 12px;
     }
 
     .sliderText {
-      font-size: 1.6rem !important;
-      line-height: 1.5;
+      font-size: 1.55rem !important;
+      line-height: 1.35;
+      margin-bottom: 10px;
     }
 
-    .category {
-      padding: 10px 20px;
+    .sliderSubtext {
+      font-size: 14px;
+      margin-bottom: 20px;
     }
 
-    .category h5 {
-      font-size: 16px;
+    .primaryBtn,
+    .waBtn {
+      padding: 9px 18px !important;
+      font-size: 13px !important;
     }
 
     .navBtn {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .prev-btn {
+      left: 8px;
+    }
+
+    .next-btn {
+      right: 8px;
     }
   }
 `;

@@ -106,8 +106,6 @@ const BasicCard = () => {
 export default memo(BasicCard);
 
 const Wrapper = styled.section`
-  padding: 90px 20px;
-
   background: linear-gradient(180deg, #ffffff, #f3f4f6);
 
   .headingContainer {

@@ -1,35 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFD700"/>
-      <stop offset="100%" stop-color="#C9A227"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Background -->
-  <rect width="64" height="64" rx="14" fill="#0B1F3A"/>
-
-  <!-- House Icon -->
-  <path 
-    d="M16 30 L32 18 L48 30 V48 H38 V38 H26 V48 H16 Z" 
-    fill="url(#gold)"
-  />
-
-  <!-- Letter C -->
-  <text 
-    x="32" 
-    y="42" 
-    text-anchor="middle" 
-    font-size="22" 
-    font-family="Poppins, Arial, sans-serif" 
-    font-weight="700" 
-    fill="#0B1F3A">
-    C
-  </text>
-
-  <!-- Sparkle -->
-  <path 
-    d="M50 12 L52 16 L56 18 L52 20 L50 24 L48 20 L44 18 L48 16 Z" 
-    fill="#FFD700"
-  />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <circle cx="60" cy="60" r="56" fill="#FFFFFF" stroke="#0B2A5B" stroke-width="7" />
+  <polygon points="60,24 26,52 34,52 60,31 86,52 94,52" fill="#0B2A5B" />
+  <rect x="52" y="48" width="7" height="7" fill="#0B2A5B" />
+  <rect x="61" y="48" width="7" height="7" fill="#0B2A5B" />
+  <rect x="52" y="57" width="7" height="7" fill="#0B2A5B" />
+  <rect x="61" y="57" width="7" height="7" fill="#0B2A5B" />
+  <path d="M 34,74 Q 60,60 86,74" fill="none" stroke="#C59B43" stroke-width="6" stroke-linecap="round" />
+  <path d="M 16,88 A 54,54 0 0,0 104,88 L 88,78 A 38,38 0 0,1 32,78 Z" fill="#0B2A5B" />
+  <text x="60" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="14" fill="#FFFFFF" letter-spacing="1.5">SANIA</text>
 </svg>

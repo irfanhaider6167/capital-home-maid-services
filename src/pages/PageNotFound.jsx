@@ -1,12 +1,9 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const PageNotFound = () => {
-  const navigate = useNavigate();
-
   return (
     <Wrapper>
       <motion.div

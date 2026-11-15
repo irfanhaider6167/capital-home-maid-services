@@ -7,74 +7,12 @@ import {
   Box,
   Button,
 } from "@mui/material";
-
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { servicesData } from "../data/servicesData";
 
-const WHATSAPP_NUMBER = "923177799786";
-
-const services = [
-  {
-    name: "FILIPINO NANNY",
-    description:
-      "Professional and caring Filipino nanny services for families and children.",
-    imgurl: "/images/finalimg/Filipino Nanny.jpg",
-  },
-  {
-    name: "ENGLISH MAID",
-    description:
-      "Experienced English-speaking maids for home cleaning and household work.",
-    imgurl: "/images/finalimg/English Maid.jpg",
-  },
-  {
-    name: "CHINESE TRANSLATOR",
-    description:
-      "Professional Chinese translator services for business and communication.",
-    imgurl: "/images/finalimg/Chinese Translator.jpg",
-  },
-  {
-    name: "COOK",
-    description:
-      "Skilled home and office cooks for delicious and hygienic meals.",
-    imgurl:
-      "https://plus.unsplash.com/premium_photo-1661714089290-ea7791092f78?q=80&w=1457&auto=format&fit=crop",
-  },
-  {
-    name: "DRIVER",
-    description:
-      "Reliable and professional drivers for personal and family transport.",
-    imgurl:
-      "https://plus.unsplash.com/premium_photo-1681821679118-bb069eeb2d98?q=80&w=1470&auto=format&fit=crop",
-  },
-  {
-    name: "BABY CARE",
-    description:
-      "Trusted baby care and babysitting services with trained staff.",
-    imgurl:
-      "https://plus.unsplash.com/premium_photo-1682094262987-86ac9b94a500?q=80&w=1470&auto=format&fit=crop",
-  },
-  {
-    name: "CLEANER",
-    description:
-      "Professional cleaning and housekeeping staff for homes and offices.",
-    imgurl:
-      "https://plus.unsplash.com/premium_photo-1661721750123-e5b654d0ee4a?q=80&w=1470&auto=format&fit=crop",
-  },
-  {
-    name: "SECURITY GUARD",
-    description:
-      "Well-trained security guards for safety and property protection.",
-    imgurl:
-      "https://plus.unsplash.com/premium_photo-1682125939509-03aa8ae4b587?q=80&w=1470&auto=format&fit=crop",
-  },
-  {
-    name: "NURSE",
-    description:
-      "Professional nursing and patient care services at your doorstep.",
-    imgurl:
-      "https://plus.unsplash.com/premium_photo-1673958771843-12c73b278bd0?q=80&w=1470&auto=format&fit=crop",
-  },
-];
+const WHATSAPP_NUMBER = "923477054656";
 
 const ActionAreaCard = () => {
   return (
@@ -91,18 +29,20 @@ const ActionAreaCard = () => {
         </Typography>
 
         <Typography className="subHeading">
-          Trusted home maid services for your family and business needs.
+          Sania Home Maid Services provides CNIC-verified maids, cooks, nurses,
+          babysitters, drivers & security guards all over Pakistan — with
+          same-day placement in Islamabad, Rawalpindi & Lahore.
         </Typography>
       </motion.div>
 
       {/* Cards */}
       <Box className="cardContainer">
-        {services.map((service, index) => {
-          const message = `Hi, I am interested in ${service.name} service`;
+        {servicesData.map((service, index) => {
+          const message = `Hello Sania Home Maid Services, I am interested in hiring a ${service.name}.`;
 
           return (
             <motion.div
-              key={index}
+              key={service.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -110,34 +50,50 @@ const ActionAreaCard = () => {
               whileHover={{ y: -8 }}
             >
               <Card className="serviceCard">
-                <CardMedia
-                  component="img"
-                  image={service.imgurl}
-                  alt={service.name}
-                  className="serviceImage"
-                  loading="lazy"
-                />
+                <Link to={`/services/${service.slug}`} className="cardLink">
+                  <CardMedia
+                    component="img"
+                    image={service.imgurl}
+                    alt={service.name}
+                    className="serviceImage"
+                    loading="lazy"
+                  />
+                </Link>
 
                 <CardContent className="cardContent">
-                  <Typography variant="h5" className="serviceTitle">
-                    {service.name}
-                  </Typography>
+                  <Link to={`/services/${service.slug}`} className="cardLink">
+                    <Typography variant="h5" className="serviceTitle">
+                      {service.name.toUpperCase()}
+                    </Typography>
+                  </Link>
 
                   <Typography className="serviceDescription">
-                    {service.description}
+                    {service.shortDesc}
                   </Typography>
 
-                  <Button
-                    component="a"
-                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                      message,
-                    )}`}
-                    target="_blank"
-                    variant="contained"
-                    className="whatsappBtn"
-                  >
-                    WhatsApp Now
-                  </Button>
+                  <Box className="btnGroup">
+                    <Button
+                      component={Link}
+                      to={`/services/${service.slug}`}
+                      variant="outlined"
+                      className="detailsBtn"
+                    >
+                      View Details
+                    </Button>
+
+                    <Button
+                      component="a"
+                      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                        message,
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="contained"
+                      className="whatsappBtn"
+                    >
+                      WhatsApp
+                    </Button>
+                  </Box>
                 </CardContent>
               </Card>
             </motion.div>
@@ -153,7 +109,7 @@ export default memo(ActionAreaCard);
 /* ================= STYLE ================= */
 
 const Wrapper = styled.section`
-  padding: 90px 20px;
+  padding: 20px 20px;
   background: linear-gradient(180deg, #f9fafb, #eef2f7);
 
   .heading {
@@ -188,7 +144,11 @@ const Wrapper = styled.section`
     transition: 0.3s ease;
   }
 
-  /* ✅ IMAGE FIX */
+  .cardLink {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .serviceImage {
     width: 100%;
     height: 220px;
@@ -196,7 +156,6 @@ const Wrapper = styled.section`
     object-position: center;
   }
 
-  /* ✅ MOBILE FIX */
   @media (max-width: 768px) {
     padding: 60px 15px;
 
@@ -217,16 +176,31 @@ const Wrapper = styled.section`
   .serviceTitle {
     font-weight: 700 !important;
     margin-bottom: 10px !important;
-    color: #111827;
+    color: #0b2a5b;
   }
 
   .serviceDescription {
     color: #6b7280;
-    margin-bottom: 15px !important;
+    margin-bottom: 18px !important;
     line-height: 1.6;
   }
 
+  .btnGroup {
+    display: flex;
+    gap: 10px;
+  }
+
+  .detailsBtn {
+    flex: 1;
+    border-color: #0b2a5b !important;
+    color: #0b2a5b !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    border-radius: 8px !important;
+  }
+
   .whatsappBtn {
+    flex: 1;
     background: #25d366 !important;
     font-weight: 600 !important;
     text-transform: none !important;

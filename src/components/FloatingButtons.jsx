@@ -7,14 +7,18 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CallIcon from "@mui/icons-material/Call";
 
 const FloatingButtons = () => {
+  const whatsappMessage = encodeURIComponent(
+    "Hello Sania Home Maid Services, I would like to inquire about hiring domestic staff.",
+  );
+
   return (
     <Wrapper>
       {/* WhatsApp */}
       <motion.a
-        href="https://wa.me/923254708027"
+        href={`https://wa.me/923477054656?text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="WhatsApp"
+        aria-label="WhatsApp Sania Home Maid Services"
         className="whatsapp"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -36,8 +40,8 @@ const FloatingButtons = () => {
 
       {/* Call */}
       <motion.a
-        href="tel:+923254708027"
-        aria-label="Call Now"
+        href="tel:+923477054656"
+        aria-label="Call Sania Home Maid Services"
         className="call"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}

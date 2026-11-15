@@ -1,13 +1,12 @@
-import React from 'react'
-import Nav from '../components/Nav';
+import React from "react";
+import Nav from "../components/Nav";
 
 const Header = () => {
-    return(
-        <>
-        <Nav />
-        </>
-    )
-  
-}
+  return (
+    <>
+      <Nav />
+    </>
+  );
+};
 
 export default Header;

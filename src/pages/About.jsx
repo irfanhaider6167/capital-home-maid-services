@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <Wrapper>
-
       {/* About Section */}
       <motion.div
         className="about_text"
@@ -16,21 +15,21 @@ const About = () => {
         transition={{ duration: 0.6 }}
       >
         <Typography variant="h3" className="title">
-          About Us
+          About Sania Home Maid Services
         </Typography>
 
         <Typography variant="body1" className="text">
-          This is your go-to platform for hiring domestic help online.
-          We are a trusted provider for all your domestic staffing needs.
-          As one of Pakistan’s leading housekeeping and maid service companies,
-          we provide verified, trained and professional staff including nurses,
-          nannies, patient care specialists and more.
+          <strong>Sania Home Maid Services</strong> is your trusted platform in
+          Islamabad and Rawalpindi for hiring verified domestic help online. We
+          provide trained, reliable, and background-verified staff including
+          house maids, cooks, chefs, house keepers, patient care attendants,
+          home nurses, babysitters/nannies, domestic couples, kitchen helpers,
+          drivers, and security guards.
         </Typography>
       </motion.div>
 
       {/* Sections */}
       <Box className="choose_section">
-
         <motion.div
           className="card"
           initial={{ opacity: 0, y: 40 }}
@@ -40,7 +39,8 @@ const About = () => {
         >
           <Typography variant="h5">Why Choose Us</Typography>
           <Typography>
-            We provide fast response, verified staff and reliable domestic services.
+            We provide fast response, CNIC-verified staff, and dependable
+            domestic staffing solutions across Islamabad and Rawalpindi.
           </Typography>
         </motion.div>
 
@@ -48,11 +48,13 @@ const About = () => {
           className="card"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <Typography variant="h5">Our Mission</Typography>
           <Typography>
-            To provide high-quality home and commercial services that improve comfort and productivity.
+            To deliver trustworthy, well-trained home and commercial staff that
+            bring comfort, safety, and peace of mind to every family.
           </Typography>
         </motion.div>
 
@@ -60,16 +62,16 @@ const About = () => {
           className="card"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
           <Typography variant="h5">Our Values</Typography>
           <Typography>
-            Integrity, trust, professionalism and customer satisfaction.
+            Integrity, safety, professionalism, and complete customer
+            satisfaction in every placement.
           </Typography>
         </motion.div>
-
       </Box>
-
     </Wrapper>
   );
 };
@@ -115,7 +117,7 @@ const Wrapper = styled.section`
     padding: 25px;
     border-radius: 18px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
     transition: 0.3s ease;
   }
 

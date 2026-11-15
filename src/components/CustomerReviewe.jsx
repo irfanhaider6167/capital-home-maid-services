@@ -17,29 +17,33 @@ import { motion } from "framer-motion";
 const reviews = [
   {
     id: 1,
-    name: "John Doe",
-    review: "Excellent maid service with professional and trusted staff.",
-    image: "https://randomuser.me/api/portraits/men/1.jpg",
+    name: "Tariq Mahmood (F-11, Islamabad)",
+    review:
+      "Sania Home Maid Services provided us with a very reliable and honest house maid. Highly satisfied with their verified staff.",
+    image: "https://randomuser.me/api/portraits/men/11.jpg",
   },
 
   {
     id: 2,
-    name: "Jane Smith",
-    review: "Very satisfied with the cleaning and baby care services.",
-    image: "https://randomuser.me/api/portraits/women/2.jpg",
+    name: "Ayesha Siddiqui (DHA Phase 2)",
+    review:
+      "Very happy with their babysitter and cook services. The staff is polite, hygienic, and well-trained.",
+    image: "https://randomuser.me/api/portraits/women/24.jpg",
   },
 
   {
     id: 3,
-    name: "Alex Johnson",
-    review: "Highly recommended for home staff and nursing services.",
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
+    name: "Dr. Kamran Ahmed (Bahria Town)",
+    review:
+      "We hired a home nurse and patient care attendant through Sania Home Maid Services. Truly caring and professional team.",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
   },
 
   {
     id: 4,
     name: "Samee Ullah",
-    review: "Professional team with fast response and excellent support.",
+    review:
+      "Professional agency with fast response and excellent customer support in Islamabad and Rawalpindi.",
     image: "/images/finalimg/samee.jpg",
   },
 ];
@@ -62,8 +66,8 @@ const ReviewSlider = () => {
         </Typography>
 
         <Typography className="subHeading">
-          We are grateful for the trust and positive feedback from our valued
-          clients.
+          We are grateful for the trust and positive feedback from families
+          across Islamabad and Rawalpindi using Sania Home Maid Services.
         </Typography>
       </motion.div>
 
