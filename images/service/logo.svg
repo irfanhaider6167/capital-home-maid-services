@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <!-- Top Curved Text Path for SANIA -->
+    <path id="topArc" d="M 105,235 A 145,145 0 0,1 395,235" />
+    <!-- Bottom Curved Text Path for CLEAN • RELIABLE • TRUSTED -->
+    <path id="bottomArc" d="M 108,335 A 175,175 0 0,0 392,335" />
+  </defs>
+
+  <!-- White Circular Badge Background -->
+  <circle cx="250" cy="250" r="236" fill="#FFFFFF" />
+
+  <!-- Outer Thick Navy Ring -->
+  <circle cx="250" cy="250" r="232" fill="none" stroke="#0B2A5B" stroke-width="11" />
+
+  <!-- Subtle Teal Inner Accent Arcs -->
+  <path d="M 65,165 A 202,202 0 0,1 135,88" fill="none" stroke="#8BB3B7" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M 365,88 A 202,202 0 0,1 435,165" fill="none" stroke="#8BB3B7" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Inner Navy Ring -->
+  <path d="M 106,338 A 168,168 0 1,1 394,338" fill="none" stroke="#0B2A5B" stroke-width="5.5" stroke-linecap="round" />
+
+  <!-- Bottom Navy Banner Band -->
+  <path d="M 56,374 A 232,232 0 0,0 444,374 L 402,340 A 175,175 0 0,1 98,340 Z" fill="#0B2A5B" />
+  <!-- Thin Teal Border Above Bottom Band -->
+  <path d="M 98,340 A 175,175 0 0,0 402,340" fill="none" stroke="#8BB3B7" stroke-width="3" />
+
+  <!-- Curved Top Brand Name: S A N I A -->
+  <text font-family="&#39;Segoe UI&#39;, Roboto, Arial, sans-serif" font-size="44" font-weight="700" fill="#0B2A5B" letter-spacing="14">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">SANIA</textPath>
+  </text>
+
+  <!-- Left Laurel Leaves (Teal) -->
+  <g fill="#8BB3B7">
+    <path d="M 88,332 C 74,318 70,304 74,294 C 84,304 90,316 88,332 Z" />
+    <path d="M 82,306 C 66,292 62,276 66,266 C 78,276 84,290 82,306 Z" />
+    <path d="M 78,278 C 62,262 60,246 66,236 C 76,248 82,262 78,278 Z" />
+    <path d="M 77,248 C 64,232 64,216 70,206 C 80,218 82,234 77,248 Z" />
+    <path d="M 80,218 C 70,202 72,186 78,178 C 86,190 86,204 80,218 Z" />
+    <path d="M 90,328 C 96,312 104,302 112,298 C 108,310 100,322 90,328 Z" />
+    <path d="M 84,300 C 90,284 98,272 108,268 C 104,280 96,292 84,300 Z" />
+    <path d="M 80,270 C 86,254 96,242 106,238 C 102,250 92,262 80,270 Z" />
+    <path d="M 79,240 C 86,224 96,212 106,208 C 102,220 92,232 79,240 Z" />
+  </g>
+
+  <!-- Right Laurel Leaves (Teal) -->
+  <g fill="#8BB3B7" transform="translate(500, 0) scale(-1, 1)">
+    <path d="M 88,332 C 74,318 70,304 74,294 C 84,304 90,316 88,332 Z" />
+    <path d="M 82,306 C 66,292 62,276 66,266 C 78,276 84,290 82,306 Z" />
+    <path d="M 78,278 C 62,262 60,246 66,236 C 76,248 82,262 78,278 Z" />
+    <path d="M 77,248 C 64,232 64,216 70,206 C 80,218 82,234 77,248 Z" />
+    <path d="M 80,218 C 70,202 72,186 78,178 C 86,190 86,204 80,218 Z" />
+    <path d="M 90,328 C 96,312 104,302 112,298 C 108,310 100,322 90,328 Z" />
+    <path d="M 84,300 C 90,284 98,272 108,268 C 104,280 96,292 84,300 Z" />
+    <path d="M 80,270 C 86,254 96,242 106,238 C 102,250 92,262 80,270 Z" />
+    <path d="M 79,240 C 86,224 96,212 106,208 C 102,220 92,232 79,240 Z" />
+  </g>
+
+  <!-- House Roof -->
+  <polygon points="250,132 162,202 178,202 250,146 322,202 338,202" fill="#0B2A5B" />
+
+  <!-- House Window (4 Panes) -->
+  <rect x="235" y="182" width="12" height="12" fill="#0B2A5B" />
+  <rect x="251" y="182" width="12" height="12" fill="#0B2A5B" />
+  <rect x="235" y="198" width="12" height="12" fill="#0B2A5B" />
+  <rect x="251" y="198" width="12" height="12" fill="#0B2A5B" />
+
+  <!-- Crossed Brooms -->
+  <!-- Broom 1 (Top-Left to Bottom-Right) -->
+  <line x1="205" y1="215" x2="275" y2="295" stroke="#0B2A5B" stroke-width="5" stroke-linecap="round" />
+  <polygon points="266,292 284,282 302,315 274,328" fill="#0B2A5B" />
+  <line x1="274" y1="296" x2="288" y2="322" stroke="#FFFFFF" stroke-width="2" />
+  <line x1="280" y1="291" x2="295" y2="318" stroke="#FFFFFF" stroke-width="2" />
+
+  <!-- Broom 2 (Top-Right to Bottom-Left) -->
+  <line x1="295" y1="215" x2="225" y2="295" stroke="#0B2A5B" stroke-width="5" stroke-linecap="round" />
+  <polygon points="234,292 216,282 198,315 226,328" fill="#0B2A5B" />
+  <line x1="226" y1="296" x2="212" y2="322" stroke="#FFFFFF" stroke-width="2" />
+  <line x1="220" y1="291" x2="205" y2="318" stroke="#FFFFFF" stroke-width="2" />
+
+  <!-- Decorative Navy & Gold Swirl Swoosh -->
+  <path d="M 192,268 C 155,255 162,216 218,222 C 268,228 308,242 332,226 C 314,252 266,242 216,232 C 174,224 166,252 192,268 Z" fill="#0B2A5B" />
+  <path d="M 196,258 C 228,236 276,254 316,246 C 282,262 232,246 196,258 Z" fill="#C59B43" />
+
+  <!-- Gold Sparkles -->
+  <polygon points="282,196 286,207 297,211 286,215 282,226 278,215 267,211 278,207" fill="#C59B43" />
+  <polygon points="200,242 204,253 215,257 204,261 200,272 196,261 185,257 196,253" fill="#C59B43" />
+  <polygon points="184,230 186,236 192,238 186,240 184,246 182,240 176,238 182,236" fill="#0B2A5B" />
+
+  <!-- Subtitle: HOME MAID SERVICE -->
+  <text x="250" y="362" text-anchor="middle" font-family="&#39;Segoe UI&#39;, Roboto, Arial, sans-serif" font-size="20" font-weight="700" fill="#0B2A5B" letter-spacing="3.5">
+    HOME MAID SERVICE
+  </text>
+
+  <!-- Curved Bottom Tagline: CLEAN • RELIABLE • TRUSTED -->
+  <text font-family="&#39;Segoe UI&#39;, Roboto, Arial, sans-serif" font-size="16.5" font-weight="700" fill="#FFFFFF" letter-spacing="3.2">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">CLEAN • RELIABLE • TRUSTED</textPath>
+  </text>
+</svg>
