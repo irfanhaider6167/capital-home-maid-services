@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "",
+  "homepage": "https://irfanhaider6167.github.io/sania-home-maid-services",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
