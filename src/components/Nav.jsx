@@ -46,7 +46,7 @@ const Nav = () => {
       {/* TOP BRAND HEADER IN DRAWER */}
       <Box className="drawerHeader">
         <img
-          src="/images/finalimg/logo.svg"
+          src="/images/service/logo.svg"
           alt="Sania Home Maid Services Logo"
           className="logodrawer"
         />
